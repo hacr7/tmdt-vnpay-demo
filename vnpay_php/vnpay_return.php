@@ -50,69 +50,57 @@
             <div class="header clearfix">
                 <h3 class="text-muted">TRANSACTION RESPONSE</h3>
             </div>
-            <div class="table-responsive row">
-                <div class='col-sm-6'>
-                    <div class="form-group">
-                        <b>Mã đơn hàng: </b>
-                    </div>    
-                    <div class="form-group">
-                        <b>Số tiền: </b>
-                    </div>  
-                    <div class="form-group">
-                        <b>Nội dung thanh toán: </b>
-                    </div> 
-                    <div class="form-group">
-                        <b>Mã phản hồi (vnp_ResponseCode): </b>
-                    </div> 
-                    <div class="form-group">
-                        <b>Mã GD Tại VNPAY: </b>
-                    </div> 
-                    <div class="form-group">
-                        <b>Mã Ngân hàng:</b>
-                    </div> 
-                    <div class="form-group">
-                        <b>Thời gian thanh toán: </b>
-                    </div> 
-                    <div class="form-group">
-                        <b>Kết quả: </b>
-                    </div> 
-                </div>
-                <div class='col-sm-6'>
-                    <div class="form-group">
-                        <?php echo $_GET['vnp_TxnRef'] ?>
-                    </div>    
-                    <div class="form-group">
-                        <?php echo number_format($_GET['vnp_Amount'])?>
-                    </div>  
-                    <div class="form-group">
-                        <?php echo $_GET['vnp_OrderInfo'] ?>
-                    </div> 
-                    <div class="form-group">
-                        <?php echo $_GET['vnp_ResponseCode'] ?>
-                    </div> 
-                    <div class="form-group">
-                        <?php echo $_GET['vnp_TransactionNo'] ?>
-                    </div> 
-                    <div class="form-group">
-                        <?php echo $_GET['vnp_BankCode'] ?>
-                    </div> 
-                    <div class="form-group">
-                        <?php echo $vnp_PayDate ?>
-                    </div> 
-                    <div class="form-group">
-                        <?php
-                        if ($secureHash == $vnp_SecureHash) {
-                            if ($_GET['vnp_ResponseCode'] == '00') {
-                                echo "<span style='color:blue'>GD Thanh cong</span>";
+            <div class="table-responsive">
+            <table style="width:100%;border:none;min-height: 300px;">
+                <colgroup>
+                    <col width="30%"  span="1">
+                    <col width="70%"  span="1">
+                </colgroup>
+                <tbody style='vertical-align: top;'>
+                    <tr>
+                        <td><b>Mã đơn hàng: </b></td>
+                        <td><?php echo $_GET['vnp_TxnRef'] ?></td>
+                    </tr>
+                    <tr>
+                        <td><b>Số tiền: </b></td>
+                        <td><?php echo number_format($_GET['vnp_Amount'])?></td>
+                    </tr>
+                    <tr>
+                        <td><b>Nội dung thanh toán: </b></td>
+                        <td><?php echo $_GET['vnp_OrderInfo'] ?></td>
+                    </tr>
+                    <tr>
+                        <td ><b>Mã phản hồi: </b></td>
+                        <td><?php echo $_GET['vnp_ResponseCode'] ?></td>
+                    </tr>
+                    <tr>
+                        <td><b>Mã GD Tại VNPAY: </b></td>
+                        <td><?php echo $_GET['vnp_TransactionNo'] ?></td>
+                    </tr>
+                    <tr>
+                        <td><b>Mã Ngân hàng:</b></td>
+                        <td><?php echo $_GET['vnp_BankCode'] ?></td>
+                    </tr>
+                    <tr>
+                        <td><b>Thời gian thanh toán: </b></td>
+                        <td><?php echo $vnp_PayDate ?></td>
+                    </tr>
+                    <tr>
+                        <td><b>Kết quả: </b></td>
+                        <td><?php
+                            if ($secureHash == $vnp_SecureHash) {
+                                if ($_GET['vnp_ResponseCode'] == '00') {
+                                    echo "<span style='color:blue'>GD Thanh cong</span>";
+                                } else {
+                                    echo "<span style='color:red'>GD Khong thanh cong</span>";
+                                }
                             } else {
-                                echo "<span style='color:red'>GD Khong thanh cong</span>";
+                                echo "<span style='color:red'>Chu ky khong hop le</span>";
                             }
-                        } else {
-                            echo "<span style='color:red'>Chu ky khong hop le</span>";
-                        }
-                        ?>
-                    </div> 
-                </div>
+                            ?></td>
+                    </tr>
+                </tbody>
+            </table>
             </div>
             <p>
                 &nbsp;
