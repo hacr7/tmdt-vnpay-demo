@@ -19,7 +19,7 @@
         <?php require_once("./config.php"); ?>             
         <div class="container">
             <div class="header clearfix">
-                <h3 class="text-muted">VNPAY TRANSACTION DEMO</h3>
+                <h3 class='text-muted' style='text-align: center; font-size: 26px !important'>VNPAY TRANSACTION DEMO</h3>
             </div>
             <h3>Tạo mới đơn hàng</h3>
             <div class="table-responsive">
@@ -42,16 +42,18 @@
                     <div class="form-group">
                         <label for="amount">Số tiền</label>
                         <input class="form-control" id="amount"
-                               name="amount" type="number" value="100000"/>
+                               name="amount" type="number" placeholder="100000"/>
+
                     </div>
                     <div class="form-group">
                         <label for="order_desc">Nội dung thanh toán</label>
-                        <textarea class="form-control" cols="20" id="order_desc" name="order_desc" rows="2">Nap tien dien thoai cho thue bao 0123456789. So tien 100,000 VND</textarea>
+                        <!-- Nap tien dien thoai cho thue bao 0123456789. So tien 100,000 VND -->
+                        <textarea class="form-control" cols="20" id="order_desc" name="order_desc" rows="2" placeholder='Noi dung thanh toan'></textarea>
                     </div>
                     <div class="form-group">
                         <label for="bank_code">Ngân hàng</label>
                         <select name="bank_code" id="bank_code" class="form-control">
-                            <option value="">Không chọn</option>
+                            <option value="">Không</option>
                             <option value="NCB"> Ngân hàng NCB</option>
                             <option value="AGRIBANK">Ngân hàng Agribank</option>
                             <option value="SCB"> Ngân hàng SCB</option>
@@ -92,40 +94,40 @@
                         <h3>Thông tin hóa đơn (Billing)</h3>
                     </div>
                     <div class="form-group">
-                        <label >Họ tên (*)</label>
+                        <label >Họ tên <span style='color: red'> *</span></label>
                         <input class="form-control" id="txt_billing_fullname"
-                               name="txt_billing_fullname" type="text" value="Cris Nguyễn"/>             
+                               name="txt_billing_fullname" type="text" placeholder="Eg: Cris Nguyễn"/>             
                     </div>
                     <div class="form-group">
-                        <label >Email (*)</label>
+                        <label >Email <span style='color: red'> *</span></label>
                         <input class="form-control" id="txt_billing_email"
-                               name="txt_billing_email" type="text" value="cr7@vnpay.vn"/>   
+                               name="txt_billing_email" type="text" placeholder="Eg: cr7@vnpay.vn"/>   
                     </div>
                     <div class="form-group">
-                        <label >Số điện thoại (*)</label>
+                        <label >Số điện thoại <span style='color: red'> *</span></label>
                         <input class="form-control" id="txt_billing_mobile"
-                               name="txt_billing_mobile" type="text" value="0934998386"/>   
+                               name="txt_billing_mobile" type="text" placeholder="Eg: 0977434324"/>   
                     </div>
                     <div class="form-group">
-                        <label >Địa chỉ (*)</label>
+                        <label >Địa chỉ <span style='color: red'> *</span></label>
                         <input class="form-control" id="txt_billing_addr1"
-                               name="txt_billing_addr1" type="text" value="7A Láng Hạ"/>   
+                               name="txt_billing_addr1" type="text" placeholder="Eg: 7A Láng Hạ"/>   
                     </div>
                     <div class="form-group">
-                        <label >Mã bưu điện (*)</label>
+                        <label >Mã bưu điện <span style='color: red'> *</span></label>
                         <input class="form-control" id="txt_postalcode"
-                               name="txt_postalcode" type="text" value="777777"/> 
+                               name="txt_postalcode" type="text" placeholder="Eg: 777777"/> 
                     </div>
                     <div class="form-group">
-                        <label >Tỉnh/TP (*)</label>
+                        <label >Tỉnh/TP <span style='color: red'> *</span></label>
                         <input class="form-control" id="txt_bill_city"
-                               name="txt_bill_city" type="text" value="Hà Nội"/> 
+                               name="txt_bill_city" type="text" placeholder="Eg: Hà Nội"/> 
                     </div>
 
                     <div class="form-group">
-                        <label >Quốc gia (*)</label>
+                        <label >Quốc gia <span style='color: red'> *</span></label>
                         <input class="form-control" id="txt_bill_country"
-                               name="txt_bill_country" type="text" value="VN"/>
+                               name="txt_bill_country" type="text" placeholder="Eg: VN"/>
                     </div>
 
                     <div class="form-group">
@@ -134,22 +136,22 @@
                     <div class="form-group">
                         <label >Tên khách hàng</label>
                         <input class="form-control" id="txt_inv_customer"
-                               name="txt_inv_customer" type="text" value="Cris Nguyễn"/>
+                               name="txt_inv_customer" type="text" placeholder="Eg: Cris Nguyễn"/>
                     </div>
                     <div class="form-group">
                         <label >Công ty</label>
                         <input class="form-control" id="txt_inv_company"
-                               name="txt_inv_company" type="text" value="Công ty Cổ phần Dịch vụ Schannel"/>
+                               name="txt_inv_company" type="text" placeholder="Eg: Công ty Cổ phần Dịch vụ Schannel"/>
                     </div>
                     <div class="form-group">
                         <label >Địa chỉ</label>
                         <input class="form-control" id="txt_inv_addr1"
-                               name="txt_inv_addr1" type="text" value="7A Láng Hạ, Phường Láng Hạ, Quận Đống Đa, Hà Nội"/>
+                               name="txt_inv_addr1" type="text" placeholder="Eg: 7A Láng Hạ, Phường Láng Hạ, Quận Đống Đa, Hà Nội"/>
                     </div>
                     <div class="form-group">
                         <label>Mã số thuế</label>
                         <input class="form-control" id="txt_inv_taxcode"
-                               name="txt_inv_taxcode" type="text" value="0102182292"/>
+                               name="txt_inv_taxcode" type="text" placeholder="Eg: 0102182292"/>
                     </div>
                     <div class="form-group">
                         <label >Loại hóa đơn</label>
@@ -161,15 +163,15 @@
                     <div class="form-group">
                         <label >Email</label>
                         <input class="form-control" id="txt_inv_email"
-                               name="txt_inv_email" type="text" value="cr7@vnpay.vn"/>
+                               name="txt_inv_email" type="text" placeholder="Eg: cr7@vnpay.vn"/>
                     </div>
                     <div class="form-group">
                         <label >Điện thoại</label>
                         <input class="form-control" id="txt_inv_mobile"
-                               name="txt_inv_mobile" type="text" value="02437764668"/>
+                               name="txt_inv_mobile" type="text" placeholder="Eg: 0977434324"/>
                     </div>
-                    <button type="submit" class="btn btn-primary" id="btnPopup">Thanh toán Post</button>
-                    <button type="submit" name="redirect" id="redirect" class="btn btn-default">Thanh toán Redirect</button>
+                    <!-- <button type="submit" class="btn btn-primary" id="btnPopup">Thanh toán Post</button> -->
+                    <button type="submit" name="redirect" id="redirect" class="btn btn-primary">Thanh toán</button>
 
                 </form>
             </div>
@@ -182,4 +184,5 @@
         </div>  
        
     </body>
+
 </html>

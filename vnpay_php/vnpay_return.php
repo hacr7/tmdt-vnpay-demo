@@ -43,7 +43,7 @@
 
         $vnp_PayDate = substr($_GET['vnp_PayDate'], 0 ,4);
         $date = $_GET['vnp_PayDate'];
-        $vnp_PayDate = substr($date,0,4) .'-' .substr($date,3,2) .'-' .substr($date,5,2) .' ' .substr($date,7,2) .':'.substr($date,9,2) .':' .substr($date,11,2);
+        $vnp_PayDate = substr($date,0,4) .'-' .substr($date,4,2) .'-' .substr($date,6,2) .' ' .substr($date,8,2) .':'.substr($date,10,2) .':' .substr($date,12,2);
         ?>
         <!--Begin display -->
         <div class="container">
@@ -63,7 +63,7 @@
                     </tr>
                     <tr>
                         <td><b>Số tiền: </b></td>
-                        <td><?php echo number_format($_GET['vnp_Amount'])?></td>
+                        <td><?php echo number_format($_GET['vnp_Amount']/100)?></td>
                     </tr>
                     <tr>
                         <td><b>Nội dung thanh toán: </b></td>
